@@ -1,13 +1,15 @@
 var btn = document.querySelector('button.generate_btn')
 
 function born () {
+    var container = document.querySelector('div.container')
     var year = Number(document.querySelector('input.year_born').value)
     var sex = document.getElementsByName('sex')
-    var resp = document.querySelector('div.text_down')
+    var resp = document.querySelector('div.resp')
     var gen = ''
     var date = new Date()
     var date = date.getFullYear()
-    var img = document.querySelector('img.img_ger')
+    var img = document.createElement('img')
+    img.setAttribute('class', 'img_gen')
     subt = date-year
 
     console.log(year)
@@ -17,19 +19,19 @@ function born () {
         gen = 'Um Homem'
         if (subt < 12) {
             gen = 'Uma Criança'
-            img.setAttribute('src', 'download.jfif')
+            img.setAttribute('src', 'img/download.jfif')
 
         } else if (subt < 19) {
             gen = 'Um Adolescente'
-            img.setAttribute('src', 'adolescente m.jpg')
+            img.setAttribute('src', 'img/adolescentem.jpg')
 
         } else if (subt < 55) {
             gen = 'Um Adulto'
-            img.setAttribute('src', 'adulto m.jfif')
+            img.setAttribute('src', 'img/adultom.jfif')
 
         } else {
             gen = 'Um Ancião'
-            img.setAttribute('src', 'aciao m.jpg')
+            img.setAttribute('src', 'img/anciaom.jpg')
 
         }
     
@@ -37,19 +39,19 @@ function born () {
         gen = 'Uma Mulher'
         if (subt < 12) {
             gen = 'Uma Criança'
-            img.setAttribute('src', 'download.jfif')
+            img.setAttribute('src', 'img/download.jfif')
 
         } else if (subt < 19) {
             gen = 'Uma Adolescente'
-            img.setAttribute('src', 'adolescente f.jfif')
+            img.setAttribute('src', 'img/adolescentef.jfif')
     
         } else if (subt < 55) {
             gen = 'Uma Adulta'
-            img.setAttribute('src', 'adulto f.jpg')
+            img.setAttribute('src', 'img/adultof.jpg')
 
         } else {
             gen = 'Uma Anciã'
-            img.setAttribute('src', 'ancia f.jpg')
+            img.setAttribute('src', 'img/anciaf.jpg')
     
         }
 
@@ -57,9 +59,12 @@ function born () {
         console.log('Sexo não Definido')
 
     }
-
+    container.style.height = '490px'
+    resp.style.textAlign = 'center'
     resp.innerHTML = `${gen} de ${subt} anos`
-    img.appendChild(img)
+    resp.appendChild(img)
+
+    console.log(`${gen} de ${subt} anos`)
 }
 
 btn.addEventListener("click", born)
