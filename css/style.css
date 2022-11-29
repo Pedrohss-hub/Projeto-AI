@@ -121,6 +121,13 @@ body {
 
 }
 
+.img_gen {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+}
+
 .text {
     position: absolute;
     bottom: 5px;
