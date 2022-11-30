@@ -23,9 +23,9 @@ body {
     position: relative;
     margin: auto;
     margin-top: 30px;
-    padding: 20px 20px 0px 10px;
+    padding: 20px 10px 20px 10px;
     width: 450px;
-    height: 250px;
+    height: 240px;
     background-color: white;
     box-shadow: 1px 1px 6px black;
     border-radius: 8px;
@@ -121,17 +121,27 @@ body {
 
 }
 
-.img_gen {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 4px solid black;
-    border-radius: 100px;
-
+.resp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    justify-content: center;
 }
 
-.resp {
-    bottom: 5px;
+.img_gen {
+    display: block;
+    margin: auto;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border: 4px solid black;
+    border-radius: 200px;
+    margin-top: 8px;
+
 }
 
 .footer {
@@ -147,6 +157,7 @@ body {
 }
 
 .link_footer {
+    text-decoration: none;
     font-size: 25px;
     color: white;
 
